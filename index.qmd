@@ -25,7 +25,7 @@ format:
 
 ## CoDEC
 
-![codec overview figure](https://geomarker.io/codec/reference/figures/codec_overview.svg)
+![](https://geomarker.io/codec/reference/figures/codec_overview.svg)
 
 ## Data Harmonization
 
@@ -37,19 +37,39 @@ format:
 
 ## How to Read Data in R Using CoDEC
 
-
-# CoDEC Specifications
+# Sharing CoDEC Data
 
 ## Frictionless Standards
 
 ## CoDEC-Specific Specifications
 
+## {cincy}
+
+## Tools for Tabular Data Resource Curation
+
 ## Tools for Checking Against Specifications
 
+# Exploring CoDEC
 
-# {cincy}
+## Leveraging data standards for shiny?
 
-# CoDEC Explore
+## Screenshot
+
+## Shiny
+
+## Inset panel and scatterplot
+
+## bslib layout
+
+## "crosstalk" hack
+
+## Interactive Demo
+
+# Conclusions
+
+## R ...
+
+- curate data, metadata, visualizations all in one language
 
 
 ## Thank You

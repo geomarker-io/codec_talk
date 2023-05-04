@@ -1,0 +1,59 @@
+---
+title: "Using R to Build a Community Data Explorer for Cincinnati (CoDEC)"
+subtitle: "CCHMC R Users Group"
+author: "Cole Brokamp, Erika Manning, Andrew Vancil"
+date: 2023-05-10
+format: 
+  revealjs:
+    theme: codec.scss
+    standalone: true
+    embed-resources: true
+---
+
+## Welcome
+
+[Join](https://outlook.office365.com/owa/r@cchmc.onmicrosoft.com/groupsubscription.ashx?action=join) the RUG Outlook group for updates and events.
+![](figs/join_rug.png){fig-align="center"}{width=180%}
+
+## Upcoming BUG + RUG Event
+
+. . .
+
+## Using R to Build a Community Data Explorer for Cincinnati (CoDEC)
+
+# CoDEC Overview
+
+## CoDEC
+
+![codec overview figure](https://geomarker.io/codec/reference/figures/codec_overview.svg)
+
+## Data Harmonization
+
+## Equitable Data
+
+## Community-Level & Disaggregated Data
+
+## CoDEC Data Available Now
+
+## How to Read Data in R Using CoDEC
+
+
+# CoDEC Specifications
+
+## Frictionless Standards
+
+## CoDEC-Specific Specifications
+
+## Tools for Checking Against Specifications
+
+
+# {cincy}
+
+# CoDEC Explore
+
+
+## Thank You
+
+🌐 [https://geomarker.io/codec](https://geomarker.io/codec)
+
+‍💻️ [github.com/geomarker-io](https://github.com/geomarker-io)

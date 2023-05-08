@@ -27,31 +27,81 @@ format:
 
 # Background
 
-## Equitable Data
+## The White House's Equitable Data Working Group^[<https://www.whitehouse.gov/briefing-room/statements-releases/2022/04/22/fact-sheet-biden-harris-administration-releases-recommendations-for-advancing-use-of-equitable-data/>]:
 
-The White House's [Equitable Data Working Group](https://www.whitehouse.gov/briefing-room/statements-releases/2022/04/22/fact-sheet-biden-harris-administration-releases-recommendations-for-advancing-use-of-equitable-data/) has defined equitable data as "those that allow for rigorous assessment of the extent to which government programs and policies yield consistently fair, just, and impartial treatment of all individuals." They advise that equitable data should “illuminate opportunities for targeted actions that will result in demonstrably improved outcomes for underserved communities.” The group recommended to make disaggregated data the norm while being "... intentional about when data are collected and shared, as well as how data are protected so as not to exacerbate the vulnerability of members of underserved communities, many of whom face the heightened risk of harm if their privacy is not protected."
+- Equitable data are "those that allow for rigorous assessment of the extent to which government programs and policies yield consistently fair, just, and impartial treatment of all individuals."
+- Equitable data should “illuminate opportunities for targeted actions that will result in demonstrably improved outcomes for underserved communities.”
+- Make disaggregated data the norm while being "... intentional about when data are collected and shared, as well as how data are protected so as not to exacerbate the vulnerability of members of underserved communities, many of whom face the heightened risk of harm if their privacy is not protected."
 
-The U.S. Chief Data Scientist, Denice Ross, has [declared](https://www.fedscoop.com/us-chief-data-scientist-interview/) that "open data is necessary and *not* sufficient to drive the type of action that we need to create a more equitable society." Open data can fall short of driving action if it is not equitable. [Disaggregating](https://doi.org/10.1377/forefront.20220323.555023) data by sensitive attributes, like race and ethnicity, can elucidate inequities that would otherwise remain hidden.
+## Disaggregation
 
-## Community-Level & Disaggregated Data
+- Open data can fall short of driving action if it is not equitable.
 
-[Data are people](https://doi.org/10.1371/journal.pcbi.1005399) and when sharing data, privacy is a spectrum of the
-tradeoffs between risks and benefits to individuals and populations. Data collected at the individual-level by one organization often [cannot be shared](https://sharing.nih.gov/data-management-and-sharing-policy/protecting-participant-privacy-when-sharing-scientific-data/principles-and-best-practices-for-protecting-participant-privacy) with another organization due to legal restrictions or organization-specific data governance policies. We are often interested in community-level (e.g. neighborhood, census tract, ZIP code) data disaggregated by gender, race, or other sensitive attributes. Achieving data harmonization upstream of storage allows for contribution of disaggregated, community-level data without disclosing individual-level data when sharing across organizations.
+- Disaggregating^[[Kader F, Doan LN, Lee M, Chin MK, Kwon SC, Yi SS. Disaggregating race/ethnicity data categories: Criticisms, dangers, and opposing viewpoints.](https://doi.org/10.1377/forefront.20220323.555023)] data by sensitive attributes, like race and ethnicity, can elucidate inequities that would otherwise remain hidden.
 
-## CoDEC
+> Open data is necessary and **not** sufficient to drive the type of action that we need to create a more equitable society.
 
-**Co**mmunity **D**ata **E**xplorer for **C**incinnati (**CoDEC**) is a data repository composed of equitable, community-level data for Cincinnati.
+--- The U.S. Chief Data Scientist, Denice Ross^[<https://www.fedscoop.com/us-chief-data-scientist-interview/>]
 
-- Data about communities come in different spatiotemporal resolutions and extents and are not designed with the specific goal of integrating with other data.
-- CoDEC defines specifications for community-level data in an effort to make them more [FAIR](https://doi.org/10.1038/sdata.2016.18).
-- Common data specification for organizations means that organizations can more easily use methods and tools for harmonizing, storing, accessing, and *sharing* community-level data.
-- {[codec](https://github.com/geomarker-io/codec)} R package to describe, curate, and check against CoDEC specifications 
+## Privacy
+
+- Data are people^[[Zook M, Barocas S, Boyd D, Crawford K, Keller E, Gangadharan SP, Goodman A, Hollander R, Koenig BA, Metcalf J, Narayanan A. Ten simple rules for responsible big data research. PLoS computational biology. 2017 Mar 30;13(3):e1005399.](https://doi.org/10.1371/journal.pcbi.1005399)]
+- Privacy is a spectrum of the tradeoffs between risks and benefits to individuals and populations
+- Data collected at the individual-level by one organization often cannot be shared^[<https://sharing.nih.gov/data-management-and-sharing-policy/protecting-participant-privacy-when-sharing-scientific-data/principles-and-best-practices-for-protecting-participant-privacy>] with another organization due to legal restrictions or organization-specific data governance policies
+- Community-level (e.g. neighborhood, census tract, ZIP code) data disaggregated by gender, race, or other sensitive attributes
+- Achieving data harmonization upstream of storage allows for contribution of disaggregated, community-level data without disclosing individual-level data when sharing across organizations
+
+## The TRUST principles for digital repositories^[[Lin D, Crabtree J, Dillo I, Downs RR, Edmunds R, Giaretta D, De Giusti M, L’Hours H, Hugo W, Jenkyns R, Khodiyar V. The TRUST Principles for digital repositories. Scientific Data. 2020 May 14;7(1):144.](https://doi.org/10.1038/s41597-020-0486-7)]
+
+Creating and maintaining an open community-level data resource equips the entire community for data-powered decision making *and* boosts organizational trustworthiness. Demonstrating reliability and capability of appropriately managing shared data helps earn the trust of organizations and communities intended to be served:
+
+- 🤲 **transparent**: make specific repository services and data holdings verifiable by publicly accessible evidence
+- 📃 **responsible**: ensure authenticity and integrity of data holdings
+- 👥 **user-focused**: meet data management norms and expectations of target user communities
+- ⏳️️ **sustainable**: preserve services and data holdings for the long-term
+- ⚙️ **technological**: provide infrastructure and capabilities supporting secure, persistent, and reliable services
+
+
+## FAIR^[<https://data.org/resources/the-fair-data-principles/>]
+
+- 🔎 **findable**: use a unique and persistent identifier, add rich metadata (using existing standards^[<https://rd-alliance.github.io/metadata-directory/standards/>])
+- 🔓 **accessible**: store in a data repository (⚠️ personal/classified information, but metadata still accessible)
+- ⚙️ **interoperable**: use an open file format with controlled vocabularies, reference relevant datasets
+- ♻️ **reusable**: well documented, including a description (README with data sources, background, and how to reproduce the data), a data dictionary (field descriptions, units, titles, missingness), and usage licenses (for code^[<https://choosealicense.com/licenses/>] or data/presentations/papers^[<https://creativecommons.org/about/cclicenses/>]) 
+
+## **Co**mmunity **D**ata **E**xplorer for **C**incinnati (**CoDEC**)
+
+A data repository composed of equitable, community-level data for Cincinnati.
+
+```{r}
+#| out.width: 0.5in
+#| dpi: 300
+#| fig.align: center
+knitr::include_graphics("https://geomarker.io/codec/logo.svg")
+```
+
+:::{#title-slide .center}
+<https://geomarker.io/codec>
+:::
+
+## **Co**mmunity **D**ata **E**xplorer for **C**incinnati (**CoDEC**)
+
+- Define common data specification for community-level data
+  - builds on Frictionless
+  - FAIR, TRUST
+  - privacy
+  - equitable disaggregation
+- Provide a method and tools for harmonizing, storing, accessing, and **sharing** community-level data
+  - spatiotemporal harmonization for integration with other data
+  - data catalog
+  - API for accessing data at scale and on demand
 
 Using these tools, a collection of extant community-level data resources is automatically transformed into a harmonized, community-level tabular data package that is openly available and accompanied by:
 
-1. a richly-documented data catalog
-2. a web-based interface for exploring and learning from data
-3. an API for accessing data at scale and on demand
+- a richly-documented data catalog
+- a web-based interface for exploring and learning from data
+- an API for accessing data at scale and on demand
+
 
 ## CoDEC Overview
 
@@ -111,34 +161,7 @@ api ---> anywhere(public access):::V
 knitr::include_graphics("https://geomarker.io/codec/reference/figures/codec_harmonization.svg")
 ```
 
-## FAIR
-
-
-- 🔎 findable: use a unique and persistent identifier, add rich metadata (using[existing standards](https://rd-alliance.github.io/metadata-directory/standards/))
-- 🔓 accessible: store in a data repository ( ⚠️ personal/classified information, but metadata still accessible)
-- ⚙️ interoperable: use an open file format with controlled vocabularies, reference relevant datasets
-- ♻️ reusable: good documentation including a README (with project background, organization of files, and how to reproduce the project) and a data dictionary (with variable explainations, measurement units, how missingness is encoded, etc); usage licenses (for [code](https://choosealicense.com/licenses/) or [data/presentations/papers](https://creativecommons.org/about/cclicenses/)) 
-
-
-## TRUST
-
-- 🤲 transparent: make specific repository services and data holdings verifiable by publicly accessible evidence
-- 📃 responsible: ensure authenticity and integrity of data holdings
-- 👥 user-focused: meet data management norms and expectations of target user communities
-- ⏳️️ sustainable: preserve services and data holdings for the long-term
-- ⚙️ technological: provide infrastructure and capabilities supporting secure, persistent, and reliable services
-
-- transparent: make specific repository services and data holdings verifiable by publicly accessible evidence
-- responsible: ensure authenticity and integrity of data holdings
-- user-focused: meet data management norms and expectations of target user communities
-- ️sustainable: preserve services and data holdings for the long-term
--  technological: provide infrastructure and capabilities supporting secure, persistent, and reliable services
-
-Creating and maintaining an open community-level data resource equips the entire community for data-powered decision making *and* boosts organizational trustworthiness. Demonstrating reliability and capability of appropriately managing shared data helps earn the [trust](https://doi.org/10.1038/s41597-020-0486-7) of organizations and communities intended to be served.
-
 ## CoDEC Data Available Now
-
-https://geomarker.io/codec/articles/data.html
 
 - [Census Tract-Level Neighborhood
   Indices](https://github.com/geomarker-io/tract_indices)
@@ -153,15 +176,21 @@ https://geomarker.io/codec/articles/data.html
 - [Hamilton County Parcel and Household
   Traffic](https://github.com/geomarker-io/hamilton_traffic)
 
-## How to Read Data in R Using CoDEC
+:::{#title-slide .center}
+<https://geomarker.io/codec/articles/data>
+:::
 
-```r
+## How to Read Data in `R` Using CoDEC
+
+```{r}
+#| echo: true
 codec::codec_data("hamilton_property_code_enforcement")
 ```
 
-## How to Read Metadata in R Using CoDEC
+## How to Read Metadata in `R` Using CoDEC
 
-```r
+```{r}
+#| echo: true
 codec::codec_data("hamilton_property_code_enforcement") |>
   codec::glimpse_tdr()
 ```
@@ -170,9 +199,15 @@ codec::codec_data("hamilton_property_code_enforcement") |>
 
 ## Frictionless Standards
 
-## CoDEC-Specific Specifications
+Developed by the [Open Knowledge Foundation](https://okfn.org/), the frictionless^[<https://frictionlessdata.io/>] [standards](https://specs.frictionlessdata.io/) are a set of patterns for describing data, including datasets (Data Package), files (Data Resource), and tables (Table Schema). A Data Package is a simple container format used to describe and package a collection of data and metadata, including schemas. These metadata are contained in a specific file (separate from the data file), usually written in JSON or YAML, that describes something specific to each Frictionless Standard:
 
-https://geomarker.io/codec/articles/specs.html
+- [Table Schema](https://specs.frictionlessdata.io/table-schema/): describes a tabular file by providing its dimension, field data types, relations, and constraints
+- [Data Resource](https://specs.frictionlessdata.io/data-resource/): describes an *exact* tabular file providing a path to the file and details like title, description, and others
+- [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) = Data Resource + Table Schema
+- [CSV dialect](https://specs.frictionlessdata.io/csv-dialect/): describes the formatting specific to the various dialects of CSV files
+- [Data Package](https://specs.frictionlessdata.io/data-package/) & [Tabular Data Package](https://specs.frictionlessdata.io/tabular-data-package/): describes a *collection* of tabular files providing data resource information from above along with general information about the package itself, a license, authors, and other metadata
+
+## CoDEC Specifications
 
 ```{mermaid}
 %%{init: { "fontFamily": "Arial" } }%%
@@ -210,6 +245,7 @@ fields --- field_name_1(field_1:\nname \n title \n description \n type):::IIII
 fields --- field_name_2(field_2:\nname \n title \n type \n constraints):::IIII
 fields --- field_name_3(field_3:\nname \n title \n description \n type \n constraints):::IIII
 ```
+<https://geomarker.io/codec/articles/specs>
 
 ## {cincy}
 
@@ -231,15 +267,21 @@ infrastructure through:
   
 ## Curating metadata for tabular data in R using attributes
 
-https://geomarker.io/codec/articles/curating-metadata.html
+:::{#title-slide .center}
+<https://geomarker.io/codec/articles/curating-metadata>
+:::
   
 ## Reading and writing tabular data resources
 
-https://geomarker.io/codec/articles/reading-writing-tdr.html
+:::{#title-slide .center}
+<https://geomarker.io/codec/articles/reading-writing-tdr>
+:::
 
 ## Tools for Checking Against CoDEC Specifications
 
-https://geomarker.io/codec/reference/check_codec_tdr_csv.html
+:::{#title-slide .center}
+<https://geomarker.io/codec/reference/check_codec_tdr_csv>
+:::
 
 # Exploring CoDEC
 

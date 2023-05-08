@@ -84,21 +84,16 @@ knitr::include_graphics("https://geomarker.io/codec/logo.svg")
 <https://geomarker.io/codec>
 :::
 
-## **Co**mmunity **D**ata **E**xplorer for **C**incinnati (**CoDEC**)
+## CoDEC Aims
 
-- Define common data specification for community-level data
-  - FAIR, TRUST
-  - privacy, equitable disaggregation
-- Provide a method and tools for harmonizing, storing, accessing, and **sharing** community-level data
-  - spatiotemporal harmonization and interpolation tools
-  - checks to contribute aggregate, community-level data
-  - API for accessing data at scale and on demand
-- Provide an interactive data catalog
-  - 'portable' data catalog derived on demand from metadata
-  - open API to serve as foundation for other data catalogs (e.g., C2D2)
-- Interactive web application
-  - explore distributions across Cincinnati
-  - exploring simple relationships between community-level measures
+::: {.incremental}
+
+1. Define common data specification for community-level data considering FAIR, TRUST, privacy, equitable disaggregation
+1. Create and disseminate methods and tools for harmonizing, storing, accessing, and *sharing* community-level data, including spatiotemporal harmonization and interpolation tools, checks to contribute aggregate, API for accessing data at scale and on demand
+1. Serve a portable interactive data catalog derived on demand from metadata and an open API to link to or include with other data catalogs (e.g., C2D2)
+1. Create an interactive web application to explore community-level distributions across Cincinnati and explore simple relationships between community-level measures
+  
+:::
 
 ## CoDEC Overview
 
@@ -168,24 +163,22 @@ knitr::include_graphics("https://geomarker.io/codec/reference/figures/codec_harm
 
 ::::
 
-## CoDEC Data Available Now
+## CoDEC Integrated Data Cores
 
-- [Census Tract-Level Neighborhood
-  Indices](https://github.com/geomarker-io/tract_indices)
-- [Harmonized Historical American Community Survey
-  Measures](https://github.com/geomarker-io/hh_acs_measures)
-- [Hamilton County Property Code
-  Enforcement](https://github.com/geomarker-io/hamilton_property_code_enforcement)
-- [Hamilton County Drive Time to
-  CCHMC](https://github.com/geomarker-io/hamilton_drivetime)
-- [Hamilton County Land Cover and Built
-  Environment](https://github.com/geomarker-io/hamilton_landcover)
-- [Hamilton County Parcel and Household
-  Traffic](https://github.com/geomarker-io/hamilton_traffic)
+&nbsp;
 
 :::{#title-slide .center}
 <https://geomarker.io/codec/articles/data>
 :::
+
+&nbsp;
+
+- [Census Tract-Level Neighborhood Indices](https://github.com/geomarker-io/tract_indices)
+- [Harmonized Historical American Community Survey Measures](https://github.com/geomarker-io/hh_acs_measures)
+- [Hamilton County Property Code Enforcement](https://github.com/geomarker-io/hamilton_property_code_enforcement)
+- [Hamilton County Drive Time to CCHMC](https://github.com/geomarker-io/hamilton_drivetime)
+- [Hamilton County Land Cover and Built Environment](https://github.com/geomarker-io/hamilton_landcover)
+- [Hamilton County Parcel and Household Traffic](https://github.com/geomarker-io/hamilton_traffic)
 
 ## How to Read Data in `R` Using CoDEC
 
@@ -217,6 +210,7 @@ Developed by the [Open Knowledge Foundation](https://okfn.org/), the frictionles
 ## CoDEC Specifications
 
 ```{mermaid}
+%%| fig-height: 5
 %%{init: { "fontFamily": "Arial" } }%%
 
 flowchart TB
@@ -305,13 +299,6 @@ CoDEC relies on the {[cincy](https://geomarker.io/cincy/index.html)} R package t
 ## "crosstalk" hack
 
 ## Interactive Demo
-
-# Conclusions
-
-## `R`
-
-- curate and serve data, metadata, visualizations all in one language
-
 
 ## Thank You
 

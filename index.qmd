@@ -87,28 +87,27 @@ knitr::include_graphics("https://geomarker.io/codec/logo.svg")
 ## **Co**mmunity **D**ata **E**xplorer for **C**incinnati (**CoDEC**)
 
 - Define common data specification for community-level data
-  - builds on Frictionless
   - FAIR, TRUST
-  - privacy
-  - equitable disaggregation
+  - privacy, equitable disaggregation
 - Provide a method and tools for harmonizing, storing, accessing, and **sharing** community-level data
-  - spatiotemporal harmonization for integration with other data
-  - data catalog
+  - spatiotemporal harmonization and interpolation tools
+  - checks to contribute aggregate, community-level data
   - API for accessing data at scale and on demand
-
-Using these tools, a collection of extant community-level data resources is automatically transformed into a harmonized, community-level tabular data package that is openly available and accompanied by:
-
-- a richly-documented data catalog
-- a web-based interface for exploring and learning from data
-- an API for accessing data at scale and on demand
-
+- Provide an interactive data catalog
+  - 'portable' data catalog derived on demand from metadata
+  - open API to serve as foundation for other data catalogs (e.g., C2D2)
+- Interactive web application
+  - explore distributions across Cincinnati
+  - exploring simple relationships between community-level measures
 
 ## CoDEC Overview
 
 ```{mermaid}
+%%| fig-height: 6.8
+
 %%{init: { "fontFamily": "arial" } }%%
 
-flowchart LR
+flowchart TD
 
 classDef I fill:#E49865,stroke:#333,stroke-width:0px;
 classDef II fill:#EACEC5,stroke:#333,stroke-width:0px;
@@ -152,14 +151,22 @@ api ---> anywhere(public access):::V
 
 ## Data Harmonization
 
-- [CoDEC](https://en.wikipedia.org/wiki/Codec) encodes data streams about the communities in which we live into a common format (census tract and month) so that it can be decoded into different community-level geographies and different time frames.
+:::: {.columns}
 
+:::{.column width="40%"}
+[CoDEC](https://en.wikipedia.org/wiki/Codec) encodes data streams about the communities in which we live into a common format (census tract and month) so that it can be decoded into different community-level geographies and different time frames.
+:::
+
+:::{.column width="60%"}
 ```{r}
-#| out.width: 5in
+#| out.width: 5.5in
 #| dpi: 300
 #| fig.align: right
 knitr::include_graphics("https://geomarker.io/codec/reference/figures/codec_harmonization.svg")
 ```
+:::
+
+::::
 
 ## CoDEC Data Available Now
 
@@ -245,43 +252,43 @@ fields --- field_name_1(field_1:\nname \n title \n description \n type):::IIII
 fields --- field_name_2(field_2:\nname \n title \n type \n constraints):::IIII
 fields --- field_name_3(field_3:\nname \n title \n description \n type \n constraints):::IIII
 ```
+
+:::{#title-slide .center}
 <https://geomarker.io/codec/articles/specs>
+:::
 
 ## {cincy}
 
-- CoDEC relies on the {[cincy](https://geomarker.io/cincy/index.html)} R package to define Cincinnati-area [geographies](https://geomarker.io/cincy/articles/geographies.html) and [interpolate](https://geomarker.io/cincy/articles/interpolate.html) area-level data between census tracts, neighborhoods, and ZIP codes in different years.
+CoDEC relies on the {[cincy](https://geomarker.io/cincy/index.html)} R package to define Cincinnati-area [geographies](https://geomarker.io/cincy/articles/geographies.html) and [interpolate](https://geomarker.io/cincy/articles/interpolate.html) area-level data between census tracts, neighborhoods, and ZIP codes in different years.
 
-## `CoDEC`
+## The `codec` R package supports [CoDEC](https://geomarker.io/codec) data infrastructure through:
 
-The goal of the R package {codec} is to support [CoDEC](https://geomarker.io/codec) data
-infrastructure through:
-
-- curating metadata for tabular data in R:
-  `vignette("curating-metadata")`
-- reading and writing tabular-data-resources:
-  `vignette("reading-writing-tdr")`
-- defining the CoDEC tabular-data-resource specifications:
-  `vignette("specs")`
-- providing tools to check CoDEC tabular-data-resources and create an
-  interactive data catalog: `vignette("data")`
-  
-## Curating metadata for tabular data in R using attributes
+### Curating metadata for tabular data in R using attributes
 
 :::{#title-slide .center}
 <https://geomarker.io/codec/articles/curating-metadata>
 :::
   
-## Reading and writing tabular data resources
+### Reading and writing tabular data resources
 
 :::{#title-slide .center}
 <https://geomarker.io/codec/articles/reading-writing-tdr>
 :::
 
-## Tools for Checking Against CoDEC Specifications
+### Tools for checking against CoDEC specifications
 
 :::{#title-slide .center}
 <https://geomarker.io/codec/reference/check_codec_tdr_csv>
 :::
+
+### Serve core tabular data resources through data catalog
+
+:::{#title-slide .center}
+<https://geomarker.io/codec/articles/data.html>
+
+<https://github.com/geomarker-io/codec/tree/main/inst>
+:::
+
 
 # Exploring CoDEC
 
@@ -301,9 +308,9 @@ infrastructure through:
 
 # Conclusions
 
-## R ...
+## `R`
 
-- curate data, metadata, visualizations all in one language
+- curate and serve data, metadata, visualizations all in one language
 
 
 ## Thank You

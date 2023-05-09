@@ -339,6 +339,7 @@ drive_meta <- codec::glimpse_schema(d_drive)
 
 ```{r}
 #| echo: true
+#| eval: false
 
 ui <- bslib::page_fillable(
   theme = bslib::bs_theme(version = 5,

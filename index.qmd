@@ -286,19 +286,86 @@ CoDEC relies on the {[cincy](https://geomarker.io/cincy/index.html)} R package t
 
 # Exploring CoDEC
 
-## Leveraging data standards for shiny?
-
 ## Screenshot
+
+![](figs/codec_explorer_screenshot.png){fig-align="center"}
 
 ## Shiny
 
+- {[shiny](https://shiny.rstudio.com/)} is a powerful tool for developing reactive, interactive web applications
+
+- Here, we use Shiny to create a data explorer for CoDEC
+
+- With Shiny the user has the power to explore the data of their choosing and visually see the link across data displays
+
+## Leveraging data standards for Shiny
+
+- Rather than a static data source (such as a .rds file), with each initialization of the app, the user is actually performing a fresh "pull" from CoDEC
+
+- As CoDEC updates, the explorer updates 
+
+. . . 
+
+```{r}
+#| echo: true
+
+d_drive <- codec::codec_data("hamilton_drivetime") 
+
+drive_meta <- codec::glimpse_schema(d_drive)
+
+#...
+
+```
+
+
 ## Inset panel and scatterplot
 
-## bslib layout
+- The core pieces of the app are a {[leaflet](https://rstudio.github.io/leaflet/)} interactive map and an inset scatterplot made using {[ggiraph](https://www.ardata.fr/ggiraph-book/)} and {[cowplot](https://wilkelab.org/cowplot/articles/plot_grid.html)}
 
-## "crosstalk" hack
+- Inspired by and leveraging the {[biscale](https://chris-prener.github.io/biscale/)} package, the explorer visualizes bivariate relationships using a blended color scale
+  - The scatterplot background is divided into the 9 levels between both variables and doubles as a color legend
+  - Both axes contain histograms displaying the univariate distribution of each selected metric
+  - When hovering over a point on the plot, the corresponding histogram indicators are highlighted
+  
+- By using the function `shiny::absolutepanel()`, we can overlay a plotting panel on top of the map and escape the gridded layout that many Shiny apps default to
+
+## {[bslib](https://rstudio.github.io/bslib/)} layout
+
+- The explorer is built using the {bslib} package, which fully implements the latest Bootstrap 5 components
+    - "fillable" pages/containers that naturally fill the user's window
+    - Modern cards and sidebars 
+
+- Using only a couple lines of code, we can easily match the theme of the app to the CoDEC website
+
+```{r}
+#| echo: true
+
+ui <- bslib::page_fillable(
+  theme = bslib::bs_theme(version = 5,
+                   "bg" = "#FFFFFF",
+                   "fg" = "#396175",
+                   "primary" = "#C28273",
+                   "grid-gutter-width" = "0.0rem",
+                   "border-radius" = "0.5rem",
+                   "btn-border-radius" = "0.25rem")
+  
+  #...
+)
+
+```
+
+
+## Connecting data displays and metadata
+
+- In order to connect the selected inputs to the plotting portions, we implemented a series of reactive "crosstalk" connections
+    - We take advantage of the CoDEC metadata to display user-friendly variable titles while linking to R-friendly variable names
+    - CoDEC metadata is also crucial for connecting individual metrics to the data core that they are a part of
+- The explorer also takes advantage of Shiny reactivity by allowing the user to select a tract on the map and highlight it on the scatterplot, as well as the opposite direction
+    - Both {leaflet} and {ggiraph} export user-selected objects that can be shared across the app
 
 ## Interactive Demo
+
+- Live link to the data explorer: [https://grapph.shinyapps.io/codec_explorer/](https://grapph.shinyapps.io/codec_explorer/)
 
 ## Thank You
 

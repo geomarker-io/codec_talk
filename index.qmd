@@ -255,6 +255,10 @@ fields --- field_name_3(field_3:\nname \n title \n description \n type \n constr
 
 CoDEC relies on the {[cincy](https://geomarker.io/cincy/index.html)} R package to define Cincinnati-area [geographies](https://geomarker.io/cincy/articles/geographies.html) and [interpolate](https://geomarker.io/cincy/articles/interpolate.html) area-level data between census tracts, neighborhoods, and ZIP codes in different years.
 
+- [Avondale Case Study](https://geomarker.io/cincy/articles/avondale.html)
+
+- [County Groupings](https://geomarker.io/cincy/articles/counties.html)
+
 ## The `codec` R package supports [CoDEC](https://geomarker.io/codec) data infrastructure through:
 
 ### Curating metadata for tabular data in R using attributes

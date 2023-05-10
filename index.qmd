@@ -10,14 +10,31 @@ format:
     embed-resources: true
 ---
 
-## Welcome
+## 👋 Welcome
 
 [Join](https://outlook.office365.com/owa/r@cchmc.onmicrosoft.com/groupsubscription.ashx?action=join) the RUG Outlook group for updates and events.
 ![](figs/join_rug.png){fig-align="center"}{width=180%}
 
-## Upcoming BUG + RUG Event
+## 📣 BUG & RUG present: 
 
-. . .
+:::{#title-slide .center}
+
+**Bilingual Data Science Meeting**
+
+*July 13, 2023*
+
+In-person at S1.203
+
+:::
+
+```{r}
+#| out.width: 0.8in
+#| dpi: 300
+#| fig.align: center
+knitr::include_graphics("figs/buginarug.png")
+```
+
+> **About BUG**: The Biomedical Informatics Users Group (BUG) is a community of bioinformatics researchers and data scientists looking to sharing knowledge, insights, and build community. We organized a series of user-led, informal talks and discussions by and for data researchers at CCHMC and UC. Please contact Krishna Roskin at krishna.roskin@cchmc.org for more details or to sign up to present at a future BUGs meeting. 
 
 ## Using R to Build a Community Data Explorer for Cincinnati (CoDEC)
 
@@ -89,7 +106,7 @@ knitr::include_graphics("https://geomarker.io/codec/logo.svg")
 ::: {.incremental}
 
 1. Define common data specification for community-level data considering FAIR, TRUST, privacy, equitable disaggregation
-1. Create and disseminate methods and tools for harmonizing, storing, accessing, and *sharing* community-level data, including spatiotemporal harmonization and interpolation tools, checks to contribute aggregate, API for accessing data at scale and on demand
+1. Create and disseminate methods and tools for harmonizing and *sharing* community-level data, including spatiotemporal interpolation, data validation, API for accessing data at scale and on demand
 1. Serve a portable interactive data catalog derived on demand from metadata and an open API to link to or include with other data catalogs (e.g., C2D2)
 1. Create an interactive web application to explore community-level distributions across Cincinnati and explore simple relationships between community-level measures
   
